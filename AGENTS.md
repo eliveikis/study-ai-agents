@@ -2,6 +2,15 @@ This project's goal is to define, teach, and record progress against a study pla
 
 The study plan is found in: /study_plan.md.
 
+## Stack and commands
+
+Python 3.12 as a [uv](https://docs.astral.sh/uv/) project, with pytest for tests and ruff for lint. It needs `uv` and `make` installed.
+
+- Setup: `uv sync`
+- Check: `make check`, which lints, then runs the tests
+
+Where exercises, notes, the `branch_eval` package and evaluation artifacts go: [specs/architecture.md](specs/architecture.md) › Structure.
+
 ## Specifications
 
 `/specs` is the authoritative source for product and system behavior.
