@@ -5,7 +5,7 @@ description: Close a study session — ask what was done, log it in study_plan.m
 
 # Study end
 
-Close a study session. Read `study_plan.md`, and `specs/architecture.md` for the progress log's format, the phase statuses and where exercises live. In the plan, write only the progress log, its checkboxes, the phase statuses and the next-session entry: the rest is the human's.
+Close a study session. Read `study_plan.md`, and `specs/architecture.md` for what a session may write in the plan, the progress log's format, the phase statuses and where exercises live.
 
 ## 1. Ask
 

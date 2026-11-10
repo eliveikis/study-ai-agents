@@ -19,6 +19,8 @@ It's a uv project on Python 3.12, with pytest and ruff. `make check` lints every
 
 Study work (exercises, notes, the plan) is committed directly on `main`. Only the evaluation harness, from Phase 2 on, is delivered as changes on their own branches.
 
+The plan's phases and checklists are the human's. A session writes only the progress log, ticks for checkboxes that have evidence ([.claude/rules/tutoring.md](../.claude/rules/tutoring.md) › Evidence for the plan), the phase statuses and the next-session entry.
+
 ### Evaluation trials
 
 A trial's workspace lives outside this repository. Claude Code loads `CLAUDE.md` files from a working directory's parents, so a workspace inside it would put this repository's `CLAUDE.md` and `AGENTS.md` into every trial.
