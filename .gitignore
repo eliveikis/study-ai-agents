@@ -1,0 +1,47 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+
+# Test, type-check, and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets (API keys for model and agent calls); commit an .env.example instead
+.env
+.env.*
+!.env.example
+
+# Claude Code: personal settings stay local; shared .claude/settings.json is committed
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Evaluation trial workspaces: disposable repository copies reset for each trial.
+# Trial results, traces, and grades are evidence; store them outside this directory.
+eval/workspaces/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS files (including Windows metadata that appears when copying files into WSL)
+.DS_Store
+Thumbs.db
+desktop.ini
+*:Zone.Identifier
