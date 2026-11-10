@@ -1,0 +1,28 @@
+[project]
+name = "branch-eval"
+version = "0.1.0"
+description = "The branch-compliance evaluation: reading trial records, then grading and running trials."
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+# Frozen first attempts stay as written: the check never lints them.
+extend-exclude = ["*_attempt.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "B"]
+# Line length is style; the check is for mistakes.
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["practice", "tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
