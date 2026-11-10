@@ -127,11 +127,44 @@ Coding fluency and project implementation details have not been independently as
 
 ### Initial question
 
-Does explicitly requiring a current-branch check improve compliance with a spec implementation workflow?
+When the branch changes outside the agent's session between tasks, does requiring the branch check as the agent's first command make `/implement` work on the current branch's requirement instead of the one it remembers?
 
-Define the intended branch policy before running trials. For example, a clean repository may permit switching or creating a branch, while uncommitted changes or an ambiguous base may require stopping. Derive the expected behavior from your actual workflow requirements.
+### Origin
 
-Use a disposable repository fixture with a tiny implementation task. Start with a few scenarios, such as already being on the correct branch, being on a different clean branch, the target branch already existing, and having uncommitted changes. Expand only if time remains.
+RepoCop's template `implement` skill gained its branch section in `54462fd` (Oct 30, requirement `implement-starts-its-branch`). `d3b9bf8` (Nov 2) revised it after two observed failures:
+
+1. **Stale branch.** After a previous task on one branch, you switched branches by hand and ran `/implement` with no path. The agent assumed it was still on the previous branch, picked that branch's requirement, reported it already complete, and asked whether to start another. Checking the branch would have found the right requirement, still to do.
+2. **Redundant check.** The agent ran `make check` before starting, though the checks had just run while completing the previous work.
+
+The revision makes `git status --porcelain --branch` the first command, picks the branch from its output before reading or planning, requires the reply to open by naming the requirement and branch, and says not to run the check command before starting.
+
+### Configurations
+
+- `baseline`: the current skill with only its branch text reverted to the `54462fd` wording. Get the old text with `git -C ~/projects/repocop show 54462fd:templates/default-repo/.claude/skills/implement/SKILL.md`.
+- `state-check`: the current skill (`d3b9bf8`).
+
+Both keep the revised step 3, so the branch text is the only difference. Comparing step 3's two wordings is a separate follow-up experiment.
+
+### Policy and scenarios
+
+Derive the expected behavior from RepoCop's archived `implement-starts-its-branch` requirement, and define it before running trials.
+
+A fresh session has no remembered branch, so it can't reproduce failure 1. Each trial therefore has three steps in one session:
+
+1. A short previous turn, identical for both configurations and not using `/implement`.
+2. The runner changes the repository outside the session, as you did by hand.
+3. The task turn runs `/implement`.
+
+| ID | Previous turn | Then the runner | Task turn | Expected |
+| -- | ------------- | --------------- | --------- | -------- |
+| S1 | On `old-task`: runs the checks and confirms old-task is done | Switches to the existing `new-task` | `/implement` (no path) | Implements `new-task.md` on `new-task` |
+| S2 | On `new-task`: reads its requirement | Changes nothing | `/implement` (no path) | Same as S1 (control) |
+| S3 | On `new-task` | Switches to `main` | `/implement` with the `new-task.md` path | Switches to `new-task` and implements there |
+| S4 | On `old-task` | Switches to `main` and leaves an uncommitted file | `/implement` with the path | Stops, changes nothing |
+
+Grade on the final repository state. Also record from each trace whether the agent checked the branch before its first switch or edit, and whether it ran `make check` before its first edit.
+
+Use a disposable repository fixture with a tiny implementation task and a local bare repository as `origin` with its HEAD set, since the skill finds the default branch through `origin/HEAD`. Expand beyond these scenarios only if time remains.
 
 ### Minimal method
 
