@@ -33,7 +33,7 @@ For each unticked checkbox the session's work bears on, tick it only when it has
 
 ## 5. Next session
 
-Rewrite the next-session entry with the same fields: current phase, first action, timebox, resume references and known blockers. The first action is usually the next unticked activity in the plan.
+Rewrite the next-session entry with the same fields: current phase, first action, timebox, resume references and known blockers. The first action names one activity by its title as the plan gives it, usually the next unticked one, with at most a note on where to resume within it. Don't restate the activity's text: the plan holds it.
 
 ## 6. Exercise READMEs
 

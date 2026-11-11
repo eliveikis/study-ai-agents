@@ -46,9 +46,16 @@ Coding fluency and project implementation details have not been independently as
 
 **Budget: four hours**
 
-- [ ] **90 minutes — Python through a useful program.** Write a program that reads JSONL execution results and reports counts by outcome. Practice file handling, dictionaries/lists, functions, exceptions, and simple tests. Make malformed input produce an explicit error. Review mutability, default arguments, and iteration as needed.
+- [ ] **90 minutes — Python through a useful program.** Write a command-line program that reads a JSONL file of evaluation results and prints how many results have each outcome. Practice file handling, dictionaries/lists, functions, exceptions, and simple tests. Review mutability, default arguments, and iteration as needed.
+  - **Input:** one JSON object per line. Each is the result of one trial in the evaluation you build in Phase 2: one run of an AI agent on one test scenario. Its fields are in [specs/architecture.md › Trial record](specs/architecture.md#trial-record).
+  - **Output:** one line per outcome with its count, such as `pass: 4`.
+  - **Malformed input:** a line that isn't a valid trial record stops the program with an error that gives the line number and what's wrong.
+  - **Samples:** [tests/data/results_sample.jsonl](tests/data/results_sample.jsonl) gives `pass: 4`, `fail: 1` and `error: 1`. [tests/data/results_malformed.jsonl](tests/data/results_malformed.jsonl) fails at line 3, which has no `outcome`.
+  - **Where:** the program goes in `src/branch_eval/` and its tests in `tests/`. `make check` lints and runs the tests.
 - [ ] **60 minutes — Inference and the agent loop.** Learn and explain tokens, context windows, next-token probabilities, sampling versus greedy decoding, and training versus inference. Draw the flow from model tool-call request to harness execution to returned result. Distinguish the model, harness, and tools.
-- [ ] **60 minutes — Two short coding exercises.** Use Python for a string problem and a list/dictionary problem. Attempt each before checking a solution. Discuss complexity and test empty inputs, duplicates, and boundaries where applicable.
+- [ ] **60 minutes — Two short coding exercises.** Use Python for a string problem and a list/dictionary problem. Attempt each before checking a solution. Discuss complexity and test empty inputs, duplicates, and boundaries where applicable. Follow [practice/README.md](practice/README.md) for each.
+  - **String:** given a string, return the index of its first character that appears only once, or -1 if there is none.
+  - **List/dictionary:** given a list of words, return them grouped so that each group holds words that are anagrams of each other.
 - [ ] **30 minutes — Record gaps and rehearse Repocop.** Explain the problem, architecture, your decisions, one failure, and how you know the tool helps. Distinguish deterministic software from model decisions. Record unresolved Python and AI concepts.
 
 ### Completion evidence
@@ -63,7 +70,7 @@ Coding fluency and project implementation details have not been independently as
 
 **Budget: four hours**
 
-- [ ] **60 minutes — Define the experiment.** Choose a few branch-compliance scenarios. Specify starting repository state, expected branch behavior, and independent success checks. Record an experiment question and what evidence would support changing the workflow.
+- [ ] **60 minutes — Define the experiment.** Start from the four scenarios in [Evaluation project scope](#evaluation-project-scope), below. Specify starting repository state, expected branch behavior, and independent success checks. Record an experiment question and what evidence would support changing the workflow.
 - [ ] **90 minutes — Run real trials.** Implement a minimal Python runner or validator and execute trials using an existing agent invocation method. Save actual outcomes, errors, elapsed time, and available traces. Fake the external invocation boundary in a test so runner behavior can be checked without paid calls.
 - [ ] **45 minutes — Inspect the results.** Check that grading ran, inspect at least one failure if any occur, and distinguish task failure from execution or grading errors. If every trial succeeds, inspect a successful trace and deliberately test the grader against a known incorrect result.
 - [ ] **45 minutes — Retrieval and training.** Explain embeddings, chunking, query retrieval, reranking, and generation using retrieved context. Explain what fine-tuning changes. Discuss why retrieval is a plausible starting point for a private codebase that changes daily.
@@ -81,9 +88,9 @@ Coding fluency and project implementation details have not been independently as
 **Budget: four hours**
 
 - [ ] **90 minutes — Timed coding and correction.** Solve one or two problems in Python, then repair mistakes. Prioritize strings, hash maps, sorting, two pointers, stacks/queues, or basic traversal according to Phase 1 weaknesses. Explain complexity and test cases.
-- [ ] **60 minutes — Repeat and compare.** Compare the original branch instruction with an explicit state-check instruction. Keep the model, tools, starting states, and budgets fixed where possible. Repeat selected scenarios under both configurations and report per-scenario outcomes.
+- [ ] **60 minutes — Repeat and compare.** Compare the `baseline` and `state-check` configurations in [Evaluation project scope](#evaluation-project-scope): the original branch instruction and an explicit state-check instruction. Keep the model, tools, starting states, and budgets fixed where possible. Repeat selected scenarios under both configurations and report per-scenario outcomes.
 - [ ] **45 minutes — Context, tool schemas, and MCP.** Explain scoped context loading, compaction, durable working state, tool descriptions/argument schemas, and MCP's role between host/client and server. Review one concrete context-related failure from your experience.
-- [ ] **45 minutes — Evaluation interview rehearsal.** Explain your experiment, limitations, and next experiment. Practice the code-review evaluation scenario and interpreting 16/20 versus 14/20 successes. Cover task coverage, paired outcomes, repeated runs, quality, cost, and time.
+- [ ] **45 minutes — Evaluation interview rehearsal.** Explain your experiment, limitations, and next experiment. Practice this question: two versions of a code-review agent each review the same 20 pull requests, and one succeeds on 16 while the other succeeds on 14. Is the first one better? Cover task coverage, paired outcomes, repeated runs, quality, cost, and time.
 
 ### Completion evidence
 
@@ -96,7 +103,7 @@ Coding fluency and project implementation details have not been independently as
 
 **Budget: four hours**
 
-- [ ] **75 minutes — Targeted coding practice.** Address the most frequent prior mistakes. Include an unfamiliar variation to check transfer rather than memorization. Rehearse the JSONL/API/results task and how to test it through a fake client or mocked HTTP boundary.
+- [ ] **75 minutes — Targeted coding practice.** Address the most frequent prior mistakes. Include an unfamiliar variation to check transfer rather than memorization. Rehearse the Phase 1 results reader as an interview task, changed to fetch the JSONL from an HTTP API instead of a file, and test it through a fake client or mocked HTTP boundary so no test makes a network call.
 - [ ] **60 minutes — Evaluation-service design.** Sketch a service for 1,000 overnight jobs. Cover bounded concurrency, a durable queue, job leases, retry policy, shared rate limits, timeouts, attempt IDs, duplicate-result handling, and persisted results. Explain how to distinguish failed tasks from incomplete or broken executions.
 - [ ] **60 minutes — Metrics, grading, and adoption.** Review task success, consistency across trials, false positives/negatives, severity, latency, API cost, and human review effort. Discuss protected grading, PR review integration, permissions, advisory versus blocking checks, and explicit expansion/stop criteria.
 - [ ] **45 minutes — Write a recommendation.** Summarize the experiment question, method, results, failure examples, limitations, and recommended next step in approximately one page. Include an alternative explanation for the findings.
@@ -211,7 +218,7 @@ Use the sections that address a current exercise or knowledge gap. Reading the e
 ## Next session
 
 - **Current phase:** Phase 1
-- **First action:** Create a tiny JSONL results fixture and write a Python reader/summary from a blank file.
+- **First action:** Python through a useful program.
 - **Timebox:** 90 minutes, including tests and correction.
 - **Resume references:** This plan and the latest progress-log entry.
 - **Known blockers:** Interview date and exact assessment format are unconfirmed.

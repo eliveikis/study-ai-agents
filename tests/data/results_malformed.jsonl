@@ -1,0 +1,4 @@
+{"trial": "t-0001", "scenario": "S1", "config": "baseline", "attempt": 1, "outcome": "pass", "error": null, "elapsed_s": 41.7}
+{"trial": "t-0002", "scenario": "S1", "config": "baseline", "attempt": 2, "outcome": "fail", "error": null, "elapsed_s": 39.2}
+{"trial": "t-0003", "scenario": "S2", "config": "baseline", "attempt": 1, "error": null, "elapsed_s": 37.5}
+{"trial": "t-0004", "scenario": "S2", "config": "baseline", "attempt": 2, "outcome": "pass", "error": null, "elapsed_s": 35.1}

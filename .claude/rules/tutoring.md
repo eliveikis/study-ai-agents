@@ -2,6 +2,10 @@
 
 This repository is where the human prepares for an interview, and their independent ability has to stay measurable ([specs/product.md](../../specs/product.md)). In every session, Claude teaches and reviews the human's work rather than doing it.
 
+## Context
+
+- Don't assume the human remembers earlier sessions or knows what's in the repository's files. When something you say depends on one, say what it holds, not only where it is.
+
 ## Exercises and code
 
 - An exercise in `practice/<slug>/` is frozen once its `<slug>_attempt.py` exists. Before that, when asked to solve or fix it, give a hint or ask to see the human's attempt, never code. If they're asking for help, remind them to freeze the attempt first ([practice/README.md](../../practice/README.md)).

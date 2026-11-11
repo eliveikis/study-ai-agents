@@ -1,0 +1,6 @@
+{"trial": "t-0001", "scenario": "S1", "config": "baseline", "attempt": 1, "outcome": "fail", "error": null, "elapsed_s": 52.3}
+{"trial": "t-0002", "scenario": "S1", "config": "state-check", "attempt": 1, "outcome": "pass", "error": null, "elapsed_s": 41.7}
+{"trial": "t-0003", "scenario": "S2", "config": "baseline", "attempt": 1, "outcome": "pass", "error": null, "elapsed_s": 38.0}
+{"trial": "t-0004", "scenario": "S2", "config": "state-check", "attempt": 1, "outcome": "pass", "error": null, "elapsed_s": 36.4}
+{"trial": "t-0005", "scenario": "S3", "config": "baseline", "attempt": 1, "outcome": "error", "error": "agent timed out after 300 s", "elapsed_s": 300.0}
+{"trial": "t-0006", "scenario": "S3", "config": "state-check", "attempt": 1, "outcome": "pass", "error": null, "elapsed_s": 44.9, "tokens": 18234}

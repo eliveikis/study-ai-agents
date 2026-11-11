@@ -19,7 +19,7 @@ Ask one question at a time. Wait for the human's answer before giving yours, the
 
 ## 2. What's next
 
-State the current phase, the first action and its target time, from the next-session entry. If the latest log row's next priority says something else, mention it too.
+State the current phase and the target time from the next-session entry. For the first action, quote the plan's text for the activity it names word for word, sub-items included: don't reword or shorten it. Then give the content of each file or section the activity links to that the work depends on, such as an input format or a sample, so the human can start without opening another file. If the latest log row's next priority says something else, mention it too.
 
 ## 3. Timing
 
