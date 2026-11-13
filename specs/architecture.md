@@ -8,17 +8,17 @@ Root design file. It covers *how* the work is put together; *why* is in [product
 | ---- | ----- |
 | `study_plan.md` | The plan: its phases and checklists, the progress log and the next-session entry |
 | `current_activity.md` | The activity being worked on, quoted from the plan with the content it links to, for rereading outside a session. Gitignored, and rewritten at the start of each session |
-| `practice/<slug>/` | One coding exercise: `<slug>.py`, `test_<slug>.py`, the frozen first attempt `<slug>_attempt.py`, and a `README.md`. [practice/README.md](../practice/README.md) gives the steps and the slug's form |
+| `practice/<slug>/` | One coding exercise: `<slug>.py`, `test_<slug>.py`, and a `README.md` that records the review's mistakes and the assistance used. [practice/README.md](../practice/README.md) gives the steps and the slug's form |
 | `notes/p<phase>_<topic>.md` | Notes on a study topic, and explanations or stories the human gave, each with Claude's review of it |
 | `src/branch_eval/` | The Python package: Phase 1's results reader, then the evaluation's grader and runner |
 | `tests/` | Tests of `branch_eval` |
-| `eval/` | The evaluation's artifacts, from Phase 2 on: scenarios, trial records (`eval/results/*.jsonl`) and saved traces. They're evidence, so they're committed |
+| `eval/` | The evaluation's artifacts: scenarios, trial records (`eval/results/*.jsonl`) and saved traces. They're evidence, so they're committed |
 | `.claude/rules/tutoring.md` | How Claude tutors, in every session |
 | `.claude/skills/study-start/`, `.claude/skills/study-end/` | The routines that open and close a session |
 
-It's a uv project on Python 3.12, with pytest and ruff. `make check` lints everything but frozen attempts (`*_attempt.py`), then runs every test under `practice/` and `tests/`. It passes when there are no tests yet.
+It's a uv project on Python 3.12, with pytest and ruff. `make check` lints everything, then runs every test under `practice/` and `tests/`. It passes when there are no tests yet.
 
-Study work (exercises, notes, the plan) is committed directly on `main`. Only the evaluation harness, from Phase 2 on, is delivered as changes on their own branches.
+Study work (exercises, notes, the plan) is committed directly on `main`. Only the evaluation harness is delivered as changes on their own branches.
 
 The plan's phases and checklists are the human's. A session writes only the progress log, ticks for checkboxes that have evidence ([.claude/rules/tutoring.md](../.claude/rules/tutoring.md) › Evidence for the plan), the phase statuses and the next-session entry.
 
@@ -83,4 +83,4 @@ flowchart TD
     log --> commit["Commit the plan, on main only"]
 ```
 
-An exercise's own steps, from blank file to frozen attempt to correction, are in [practice/README.md](../practice/README.md).
+An exercise's own steps, from blank file to review to correction, are in [practice/README.md](../practice/README.md).

@@ -1,4 +1,4 @@
-# P1A2 — AI agent basics
+# Inference and the agent loop
 
 Allow 20 minutes. Spend 6 minutes on tokens and prediction, 5 on context and training, 5 tracing the tool call, and 4 on the questions at the end, which sit behind a spoiler warning.
 

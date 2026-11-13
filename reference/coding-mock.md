@@ -1,10 +1,10 @@
-# P5A1 — Coding mock
+# Coding mock
 
-Use 10–20 minutes to set up. The full activity has a 60-minute timebox. The worked solution is at the end, behind a spoiler warning.
+Use 10–20 minutes to set up. The worked solution is at the end, behind a spoiler warning.
 
 ## What this mock draws on
 
-No new material: a mock tests what you can already do. This one uses dictionaries, counting and tests, from P1A1 and P1A3. Revisit those guides' teaching sections beforehand, not their answers.
+No new material: a mock tests what you can already do. This one uses dictionaries, counting and tests, from `results-reader.md`, `first-unique-character.md` and `group-anagrams.md`. Revisit those guides' teaching sections beforehand, not their answers.
 
 ## Set up an independent attempt
 

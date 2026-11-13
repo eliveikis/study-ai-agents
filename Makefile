@@ -1,4 +1,4 @@
-# The repository's check: lint everything but frozen first attempts, then run every test.
+# The repository's check: lint everything, then run every test.
 # pytest exits with status 5 when it collects no tests, which passes.
 .PHONY: check
 check:

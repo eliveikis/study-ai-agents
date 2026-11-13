@@ -9,11 +9,17 @@ def first_unique_char(text: str) -> int:
 
     seen = {}
     # First, count appearances of each character.
-    for _, char in enumerate(text):
-        seen[char] = seen.get(char, 0) + 1
+    for index, char in enumerate(text):
+        record = seen.get(char, None)
+        if record is None:
+            # The first time a new character is seen, store its index and a
+            # counter.
+            seen[char] = [index, 1]
+        else:
+            record[1] += 1
 
     # Now return the first one that was seen only once.
-    for index, (_, count) in enumerate(seen.items()):
-        if count == 1:
-            return index
+    for _, record in seen.items():
+        if record[1] == 1:
+            return record[0]
     return -1

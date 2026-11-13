@@ -14,7 +14,7 @@ One learner: an experienced engineer whose Python is rusty, working through the 
 
 Ranked: when two conflict, the higher one wins.
 
-1. **Independent ability stays measurable.** First attempts are written without AI and frozen before any help, and each exercise and session records the assistance used.
+1. **Independent ability stays measurable.** First attempts are written without AI before any review, and each exercise and session records the assistance used.
 2. **`study_plan.md` is the only progress record, and what it claims has evidence.** A checkbox is ticked, or a phase's status advanced, only on evidence in the repository.
 3. **Working code and recorded results come before infrastructure.**
 4. **A session takes little ceremony.** Opening and closing a session is one command each.

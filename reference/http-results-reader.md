@@ -1,6 +1,6 @@
-# P4A1 — Targeted coding practice with an HTTP reader
+# The results reader over HTTP
 
-Use 10–20 minutes to study the material below. The full activity has a 75-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Move the input boundary
 
@@ -60,7 +60,7 @@ Try a successful response whose last JSON record has no trailing newline. Predic
 
 ## ⚠️ SPOILERS: questions and answers
 
-Prepare and attempt using only the text above this line. Everything below it answers the exercise. Read on only once your attempt is frozen.
+Prepare and attempt using only the text above this line. Everything below it answers the exercise. Read on only once your attempt is done.
 
 ### Questions
 

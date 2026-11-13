@@ -1,6 +1,6 @@
-# P5A4 — Experience and final recall
+# Experience stories and final recall
 
-Use 10–20 minutes to study the material below. The full activity has a 60-minute timebox, including study. Recall questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Recall questions and answers are at the end, behind a spoiler warning.
 
 ## Build four evidence-backed stories
 

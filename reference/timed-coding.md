@@ -1,10 +1,10 @@
-# P3A1 — Timed coding and correction
+# Timed coding
 
-Use 10–20 minutes to study the material below. The full activity has a 90-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Choose the mechanism you need to practice
 
-Use your Phase 1 mistake log. If you repeatedly lost duplicate counts, pick a hash-map problem. If boundary indices caused failures, choose two pointers.
+Use your mistake log. If you repeatedly lost duplicate counts, pick a hash-map problem. If boundary indices caused failures, choose two pointers.
 
 ## The mechanisms
 
@@ -53,7 +53,7 @@ Reserve 30 minutes for an independent attempt, 15 for tracing and tests, 25 for 
 
 ## ⚠️ SPOILERS: questions and answers
 
-Prepare and attempt using only the text above this line. Everything below it answers the timed prompt. Read on only once your attempt is frozen.
+Prepare and attempt using only the text above this line. Everything below it answers the timed prompt. Read on only once your attempt is done.
 
 ### Questions
 

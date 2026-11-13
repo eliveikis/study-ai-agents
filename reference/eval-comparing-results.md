@@ -1,6 +1,6 @@
-# P3A4 — Evaluation interview rehearsal
+# Comparing two agents' results
 
-Use 10–20 minutes to study the material below. The full activity has a 45-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Totals hide which items changed
 

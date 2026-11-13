@@ -1,6 +1,6 @@
-# P2A1 — Define the branch experiment
+# Define the branch experiment
 
-Use 10–20 minutes to study the material below. The full activity has a 60-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Specify what would count as success
 

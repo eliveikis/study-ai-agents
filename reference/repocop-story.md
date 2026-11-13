@@ -1,6 +1,6 @@
-# P1A4 — Record gaps and rehearse Repocop
+# Repocop story
 
-Use 10–20 minutes to study the material below. The full activity has a 30-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Build a story from one observed incident
 
@@ -43,6 +43,6 @@ Prepare using only the text above this line. Everything below it asks the questi
 ### Answers
 
 1. The failure came from the model acting on what it remembered instead of what was true. The skill's instructions are in context at the moment the model decides where to work, and making the check the first command puts the live branch into context before any planning. The tradeoff: it's still an instruction, so the model can skip it.
-2. Not from the commit, and not from one good run. You'd compare both wordings on the same scenarios, the stale-branch one included, with repeats, and grade the final repository state. Until you've run that in Phases 2 and 3, describe it as proposed work.
+2. Not from the commit, and not from one good run. You'd compare both wordings on the same scenarios, the stale-branch one included, with repeats, and grade the final repository state. Until you've run that evaluation, describe it as proposed work.
 3. An instruction is cheap and flexible, and it can ask for judgement, such as choosing the requirement that matches the branch. Nothing makes the model follow it. An enforced check, such as a hook the harness runs, always runs, but it can only do what code can decide, and it's one more piece to maintain.
 4. Any of these: the model skips or misreads the check; the branch changes again after the check, mid-task; the branch name matches no requirement; uncommitted work in the tree gets disturbed.

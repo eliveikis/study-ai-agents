@@ -1,6 +1,6 @@
-# P4A4 — Write a one-page recommendation
+# Write a one-page recommendation
 
-Use 10–20 minutes to study the material below. The full activity has a 45-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Start with the decision someone needs to make
 

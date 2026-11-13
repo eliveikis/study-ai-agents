@@ -9,10 +9,6 @@ dependencies = []
 requires = ["uv_build>=0.12.21,<0.13.0"]
 build-backend = "uv_build"
 
-[tool.ruff]
-# Frozen first attempts stay as written: the check never lints them.
-extend-exclude = ["*_attempt.py"]
-
 [tool.ruff.lint]
 select = ["E", "F", "B"]
 # Line length is style; the check is for mistakes.

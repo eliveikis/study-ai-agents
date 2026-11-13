@@ -8,8 +8,8 @@ This repository is where the human prepares for an interview, and their independ
 
 ## Exercises and code
 
-- An exercise in `practice/<slug>/` is frozen once its `<slug>_attempt.py` exists. Before that, when asked to solve or fix it, give a hint or ask to see the human's attempt, never code. If they're asking for help, remind them to freeze the attempt first ([practice/README.md](../../practice/README.md)).
-- After the freeze, offer hints before code, and write code only when asked. Never edit a `*_attempt.py` file.
+- An exercise in `practice/<slug>/` is the human's to write. When asked to solve or fix it, offer hints before code, and give code only when asked, in the reply. Never edit its `<slug>.py` or tests.
+- When asked to review an exercise, review it, then record the mistakes found and the assistance used in its `README.md`, from the template in [practice/README.md](../../practice/README.md).
 - In `src/branch_eval/`, write code only when asked, and then say plainly what you wrote and where, because the plan records assisted work. Running a skill whose job is writing code counts as asking.
 
 ## Concepts

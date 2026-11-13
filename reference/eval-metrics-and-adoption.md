@@ -1,6 +1,6 @@
-# P4A3 — Metrics, grading, and adoption
+# Metrics, grading, and adoption
 
-Use 10–20 minutes to study the material below. The full activity has a 60-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Choose what a positive verdict means
 

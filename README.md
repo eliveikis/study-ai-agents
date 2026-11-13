@@ -10,7 +10,7 @@ A phase is one or more sessions. In each session:
 2. Do that action:
    - **Coding exercise:** follow [practice/README.md](practice/README.md).
    - **Concept or story** ("Can explain …", the Repocop story): explain it to Claude without notes. Claude reviews it and saves it in `notes/`, which is the evidence that ticks the box.
-   - **Evaluation harness** (Phase 2 on): build it as a change, as [specs/changes/README.md](specs/changes/README.md) describes.
+   - **Evaluation harness:** build it as a change, as [specs/changes/README.md](specs/changes/README.md) describes.
 3. Run `/study-end` and answer its questions. It logs the session, ticks the boxes you have evidence for, sets up the next session and commits.
 
 Keep going until the phase's boxes are ticked or its budget runs out. Once you're over budget, `/study-end` asks whether to stop. After you stop, the next `/study-start` moves you on to the next phase.
@@ -29,5 +29,5 @@ Do a phase again and keep what you've already earned.
 Start a phase over from scratch.
 
 1. In [study_plan.md](study_plan.md), for that phase: untick its boxes, set its status to `In progress`, and set the next-session entry to that phase and its first activity.
-2. Leave its log rows and `*_attempt.py` files alone. They record your first try.
+2. Leave its log rows and exercise folders alone. They record your first try.
 3. Follow [Repeat a phase](#repeat-a-phase) from step 2.

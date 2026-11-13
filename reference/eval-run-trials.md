@@ -1,6 +1,6 @@
-# P2A2 — Run real trials
+# Run real trials
 
-Use 10–20 minutes to study the material below. The full activity has a 90-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Follow one trial end to end
 

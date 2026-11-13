@@ -1,10 +1,10 @@
-# P5A2 — Technical mock
+# Technical mock
 
-Use 10–20 minutes to set up. The full activity has a 60-minute timebox. The mock's questions, and what a strong answer covers, are at the end, behind a spoiler warning: in a mock, the questions are part of the test.
+Use 10–20 minutes to set up. The mock's questions, and what a strong answer covers, are at the end, behind a spoiler warning: in a mock, the questions are part of the test.
 
 ## What this mock draws on
 
-No new material. The four rounds cover AI fundamentals (P1A2, P3A3), experiment design (P2A1, P3A2), failure diagnosis (P2A3) and systems (P4A2). Revisit those guides' teaching sections beforehand. If a partner runs the mock, they read the questions and you don't.
+No new material. The four rounds cover AI fundamentals (`inference-and-agent-loop.md`, `retrieval-and-fine-tuning.md`, `context-tools-and-mcp.md`), experiment design (`eval-define-the-experiment.md`, `eval-repeat-and-compare.md`), failure diagnosis (`eval-inspect-results.md`) and systems (`eval-service-design.md`). Revisit those guides' teaching sections beforehand. If a partner runs the mock, they read the questions and you don't.
 
 ## Run four interview rounds
 

@@ -1,6 +1,6 @@
-# P2A3 — Inspect and calibrate the results
+# Inspect and calibrate the results
 
-Use 10–20 minutes to study the material below. The full activity has a 45-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Read one result backwards
 

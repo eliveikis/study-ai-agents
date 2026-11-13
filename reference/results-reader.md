@@ -1,6 +1,6 @@
-# P1A1 — Python through a useful program
+# Python through a useful program
 
-Use 10–20 minutes to study the material below. The full activity has a 90-minute timebox, including study. Questions and answers are at the end, behind a spoiler warning.
+Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
 
 ## Read one trial at a time
 
@@ -23,7 +23,7 @@ pytest fails a test only when an assertion is false or an exception escapes it. 
 1. Review your existing implementation in `src/branch_eval/parse.py`. Use the Trial record in `specs/architecture.md` for the required fields and types.
 2. Keep aggregation separately callable so tests can assert exact counts. Let the CLI handle display and an unsuccessful exit. Ensure a failure midway cannot look like a complete result.
 3. Run the supplied sample and malformed fixtures. Expect four passes, one failure and one error on the sample. The malformed fixture should identify line 3 and the missing outcome. Run `make check` in the project.
-4. The progress log already records a working reader. Carry the deferred field-type, blank-line and CLI cases into P4A1.
+4. The progress log already records a working reader. Carry the deferred field-type, blank-line and CLI cases into the HTTP version of the reader (`http-results-reader.md`).
 
 ---
 
