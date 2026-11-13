@@ -10,7 +10,7 @@ Given a string, return the index of its first character that appears only once, 
 
 ## Time spent
 
-Not recorded.
+About 20 minutes in total: the session's 40, split evenly between the two exercises. Time to the first working version not recorded.
 
 ## Approach and complexity
 

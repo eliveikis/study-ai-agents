@@ -10,7 +10,7 @@ Given a list of words, return them grouped so that each group holds words that a
 
 ## Time spent
 
-Not recorded.
+About 20 minutes in total: the session's 40, split evenly between the two exercises.
 
 ## Approach and complexity
 

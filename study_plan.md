@@ -37,7 +37,7 @@ Coding fluency and project implementation details have not been independently as
 | Phase | Focus                                                              | Main result                                          | Status      |
 | ----- | ------------------------------------------------------------------ | ---------------------------------------------------- | ----------- |
 | 1     | Python baseline, coding basics, inference and agent loop           | Working results reader and an initial skill baseline | In progress |
-| 2     | A first layer of every other topic                                 | A first answer for every interview topic             | Not started |
+| 2     | A first layer of every other topic                                 | A first answer for every interview topic             | In progress |
 | 3     | The smallest real evaluation, timed coding                         | S1 graded under both configurations                  | Not started |
 | 4     | Mock interviews and repair                                         | Evidence of performance under interview conditions   | Not started |
 | 5     | Second layer: remaining scenarios, reliability, retrieval, context | All four scenarios under both configurations         | Not started |
@@ -64,7 +64,7 @@ Coding fluency and project implementation details have not been independently as
 
 - [x] Results reader runs on a small sample and reports errors visibly.
 - [x] At least one meaningful test covers parsing or aggregation behavior.
-- [ ] Coding attempts and mistakes are saved.
+- [x] Coding attempts and mistakes are saved.
 - [ ] Have a 60-second Repocop story covering the problem, the architecture, one decision and one failure.
 
 ## Phase 2 — Cover every topic once
@@ -80,7 +80,7 @@ Coding fluency and project implementation details have not been independently as
 
 ### Completion evidence
 
-- [ ] The anagram attempt and its mistakes are saved.
+- [x] The anagram attempt and its mistakes are saved.
 - [ ] Can explain inference and a tool-use loop in roughly two minutes from memory.
 - [ ] Can say what retrieval and fine-tuning each change, and why retrieval suits a codebase that changes daily.
 - [ ] Can answer the 16-versus-14 question without claiming more than the totals show.
@@ -263,11 +263,13 @@ Use the sections that address a current exercise or knowledge gap. Reading the e
 | ---- | -------------- | ------- | -------------------- | --------------------------------- | ------------- |
 | 2026-11-12 | Phase 1 — Python through a useful program | 360 | `src/branch_eval/parse.py` (the results reader) and `tests/test_results.py`; `make check` passes. Ticked "Results reader runs on a small sample and reports errors visibly": the sample prints `pass: 4`, `fail: 1`, `error: 1`, and the malformed file stops at line 3, naming the missing `outcome`. Ticked "At least one meaningful test covers parsing or aggregation behavior": `test_valid_jsonl` asserts the exact counts and `test_invalid_jsonl` asserts a `ValueError` at line 3. Code written by hand, after a full Python refresh using tutorials and ChatGPT; corrections followed Claude's review and hints. Claude wrote no code. | From Claude's review, not yet reviewed by the human: passed the type `dict` instead of `result`, so the required-field check never fired; tests ran the code without asserting its results; a bare `except`; printed instead of returning, so it was hard to test; errors without a line number; raised a generic `Exception`, so `pytest.raises` couldn't target it. The minutes include a full Python refresh after six years away, so they don't represent the activity. | Inference and the agent loop. Phase 1 continues past its 240-minute budget, the overrun being the refresh. The activity's checkbox stays unticked: field types aren't checked yet. Deferred to Phase 4's rehearsal of the reader: type checks, blank lines, CLI errors through `sys.exit` or `argparse`, test paths relative to the test file, a test for a missing field other than `outcome`, naming. |
 | 2026-11-13 | Phase 1 — Inference and the agent loop | 60 | Studied `reference/inference-and-agent-loop.md`, from a new `reference/` folder with a study guide for every activity, written by ChatGPT. Answered the guide's teach-back questions aloud and checked them against its answers. No explanation, notes or flow drawing saved. Nothing ticked: the activity and "Can explain inference and a tool-use loop in roughly two minutes from memory" need an explanation given in a session, reviewed and saved in a notes file, and the human moved on without one. Claude wrote no code. | None reported. | Two short coding exercises. Phase 1 continues past its 240-minute budget, with 420 minutes logged. The inference activity and its explain-from-memory check stay unticked until an explanation is reviewed. |
+| 2026-11-13 | Phase 1 — One short coding exercise | 20 | `practice/p1_two_sum/`: `p1_two_sum.py`, its tests and `README.md`; `make check` passes. Ticked "Coding attempts and mistakes are saved": the README records the mistake Claude's review found and the correction. The activity stays unticked: its complexity hasn't been discussed. Code written by hand; Claude reviewed it and gave a failing input, `"aab"`, with a hint, and wrote no code. Minutes: the human reported 40 for both exercises, split evenly. The plan was reshaped this session into eight phases that take each topic in layers, with the second coding exercise moved to Phase 2; the freeze step for exercises was dropped; and Claude rewrote the `reference/` guides with spoiler sections and new teaching text, and renamed them by topic. | The second loop returned the position among the dictionary's distinct characters, not the position in the string, so `"aab"` gave 1 instead of 2; no test had a repeated character before the unique one. Fixed by storing each character's first index with its count. Open: the time and space complexity, and why the dictionary's insertion order gives the *first* unique character. | Rehearse a short Repocop story. Phase 1 continues past its 240-minute budget, with 440 minutes logged. The coding activity ticks once its complexity is discussed. |
+| 2026-11-13 | Phase 2 — Group anagrams | 20 | `practice/p1_two_sum_2/`: `p1_two_sum_2.py`, its tests and `README.md`; `make check` passes. Done ahead of the plan, before Phase 1 finished. Ticked "The anagram attempt and its mistakes are saved": the README records Claude's review. The activity stays unticked: no test has a duplicated word, and the complexity hasn't been discussed. Code written by hand; Claude reviewed it and wrote no code. | From Claude's review: length buckets are redundant, since equal sorted letters imply equal length; `group = group.append(val)` sets `group` to `None`; the tests fix one order of groups, which the contract doesn't state; the parameter `input` shadows a built-in. Open: the complexity. | Retrieval versus fine-tuning, once Phase 1 is done. A duplicated-word test and the complexity discussion tick the activity. |
 
 ## Next session
 
 - **Current phase:** Phase 1
-- **First action:** One short coding exercise.
-- **Timebox:** 30 minutes.
-- **Resume references:** This plan, the latest progress-log entry and `reference/first-unique-character.md`.
+- **First action:** Rehearse a short Repocop story.
+- **Timebox:** 20 minutes.
+- **Resume references:** This plan, the latest progress-log entries and `reference/repocop-story.md`.
 - **Known blockers:** Interview date and exact assessment format are unconfirmed.
