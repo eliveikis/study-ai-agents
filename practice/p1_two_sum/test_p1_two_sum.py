@@ -10,8 +10,6 @@ def test_p1_two_sum():
         "aba": 1,
         "abab": -1
     }
-    index = 0
-    for k, v in cases.items():
+    for index, (k, v) in enumerate(cases.items()):
         assert first_unique_char(k) == v, f"index: {index}"
-        index += 1
 
