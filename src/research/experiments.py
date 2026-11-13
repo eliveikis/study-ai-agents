@@ -14,8 +14,8 @@ def show(*args, **kwargs):
 print(show(1,2,3))
 
 # lambda syntax
-lambda_test = lambda x: x * 2
-print(lambda_test(4))
+#lambda_test = lambda x: x * 2
+#print(lambda_test(4))
 
 # slice stepping rules
 slice_a = [10, 20, 30]

@@ -36,7 +36,7 @@ Coding fluency and project implementation details have not been independently as
 
 | Phase | Focus                                                      | Main result                                          | Status      |
 | ----- | ---------------------------------------------------------- | ---------------------------------------------------- | ----------- |
-| 1     | Python baseline, coding basics, inference and agent loop   | Working results reader and an initial skill baseline | Not started |
+| 1     | Python baseline, coding basics, inference and agent loop   | Working results reader and an initial skill baseline | In progress |
 | 2     | Small evaluation, independent grading, RAG and fine-tuning | First complete evaluation run                        | Not started |
 | 3     | Timed coding, controlled comparison, context and MCP       | Repeated trials and stronger interview explanations  | Not started |
 | 4     | Reliability, evaluation decisions, targeted coding         | One-page recommendation and service design           | Not started |
@@ -60,8 +60,8 @@ Coding fluency and project implementation details have not been independently as
 
 ### Completion evidence
 
-- [ ] Results reader runs on a small sample and reports errors visibly.
-- [ ] At least one meaningful test covers parsing or aggregation behavior.
+- [x] Results reader runs on a small sample and reports errors visibly.
+- [x] At least one meaningful test covers parsing or aggregation behavior.
 - [ ] Coding attempts and mistakes are saved.
 - [ ] Can explain inference and a tool-use loop in roughly two minutes from memory.
 - [ ] Have a concise Repocop story with honest limits on measured outcomes.
@@ -213,12 +213,12 @@ Use the sections that address a current exercise or knowledge gap. Reading the e
 
 | Date | Phase/activity | Minutes | Evidence or artifact | Mistakes and unresolved questions | Next priority |
 | ---- | -------------- | ------- | -------------------- | --------------------------------- | ------------- |
-|      |                |         |                      |                                   |               |
+| 2026-11-12 | Phase 1 — Python through a useful program | 360 | `src/branch_eval/parse.py` (the results reader) and `tests/test_results.py`; `make check` passes. Ticked "Results reader runs on a small sample and reports errors visibly": the sample prints `pass: 4`, `fail: 1`, `error: 1`, and the malformed file stops at line 3, naming the missing `outcome`. Ticked "At least one meaningful test covers parsing or aggregation behavior": `test_valid_jsonl` asserts the exact counts and `test_invalid_jsonl` asserts a `ValueError` at line 3. Code written by hand, after a full Python refresh using tutorials and ChatGPT; corrections followed Claude's review and hints. Claude wrote no code. | From Claude's review, not yet reviewed by the human: passed the type `dict` instead of `result`, so the required-field check never fired; tests ran the code without asserting its results; a bare `except`; printed instead of returning, so it was hard to test; errors without a line number; raised a generic `Exception`, so `pytest.raises` couldn't target it. The minutes include a full Python refresh after six years away, so they don't represent the activity. | Inference and the agent loop. Phase 1 continues past its 240-minute budget, the overrun being the refresh. The activity's checkbox stays unticked: field types aren't checked yet. Deferred to Phase 4's rehearsal of the reader: type checks, blank lines, CLI errors through `sys.exit` or `argparse`, test paths relative to the test file, a test for a missing field other than `outcome`, naming. |
 
 ## Next session
 
 - **Current phase:** Phase 1
-- **First action:** Python through a useful program.
-- **Timebox:** 90 minutes, including tests and correction.
+- **First action:** Inference and the agent loop.
+- **Timebox:** 60 minutes.
 - **Resume references:** This plan and the latest progress-log entry.
 - **Known blockers:** Interview date and exact assessment format are unconfirmed.

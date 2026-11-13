@@ -6,7 +6,7 @@ import json
 def require(d: dict, k: str) -> bool:
     try:
         d[k]
-    except KeyError as err:
+    except KeyError:
         return False
     return True
 
@@ -14,7 +14,7 @@ def validate(result: dict):
     required_keys = [ "trial", "scenario", "config", "attempt", "outcome", "elapsed_s"]
     failed_keys = []
     for key in required_keys:
-        if not require(dict, key):
+        if not require(result, key):
             failed_keys.append(key)
 
     if len(failed_keys) > 0:
@@ -30,21 +30,24 @@ def validate(result: dict):
 def parse_file(filename) -> dict:
     with open(filename, encoding=("utf-8")) as file:
         counts = {"pass": 0, "fail": 0, "error": 0}
-        for line in file:
-            result = json.loads(line)
+        for line_number, line in enumerate(file, start=1):
             try:
+                result = json.loads(line)
                 validate(result)
             except Exception as err:
-                raise Exception(f"invalid result: {result} with exception:{err}")
-            outcome = result["outcome"]
-            counts[outcome] += 1
-        print(f"pass: {counts["pass"]}, {counts["fail"]}, {counts["error"]}")
+                raise ValueError(f"line: {line_number}, invalid result: {result} with exception:{err}") from err
+            else:
+                outcome = result["outcome"]
+                counts[outcome] += 1
+        return counts
 
 def main():
     if len(sys.argv) < 2:
         raise ValueError("missing argument")
     filename = sys.argv[1]
-    parse_file(filename)
+    counts = parse_file(filename)
+    for key, val in counts.items():
+        print(f"{key}: {val}")
 
 if __name__ == "__main__":
     main()
