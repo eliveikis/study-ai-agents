@@ -1,6 +1,6 @@
 # P1A2 — AI agent basics
 
-Allow 20 minutes. Spend 6 minutes on tokens and prediction, 5 on context and training, 5 tracing the tool call, and 4 on the teach-back questions.
+Allow 20 minutes. Spend 6 minutes on tokens and prediction, 5 on context and training, 5 tracing the tool call, and 4 on the questions at the end, which sit behind a spoiler warning.
 
 ## Trace one prediction
 
@@ -34,7 +34,7 @@ A language model takes the tokens so far and assigns **next-token probabilities*
 
 Greedy makes a fresh decision at every position. Picking the most probable first token does not guarantee the most probable complete sentence, because later choices depend on the prefix. With sampling, even an identical prefix and identical probabilities can yield different continuations across runs. In the table, 50% for the first token describes just one decision, before the next token has been chosen.
 
-Pause and predict what greedy decoding would select if the weights changed to 40%, 45%, and 15%. Could sampling still produce ` window`? A probability here measures how likely a continuation is under the model. Factual accuracy requires a separate check.
+A probability here measures how likely a continuation is under the model. Factual accuracy requires a separate check.
 
 ## What fits in context?
 
@@ -84,19 +84,24 @@ sequenceDiagram
 
 **Trace a failure.** Suppose the tool opens the path and gets a “file missing” error. The harness returns that error to the model in place of 42. The model can now ask the user for the correct path. Compare that with a successful result of zero, which would mean the tool read an empty file. The difference comes from what the tool actually observed.
 
-## Teach it back
+---
 
-Answer aloud before checking below.
+## ⚠️ SPOILERS: questions and answers
+
+Prepare using only the text above this line. Everything below it asks the questions and then answers them.
+
+### Questions
 
 1. Explain how a prompt becomes tokens and how the model generates two more tokens. Where does the choice between greedy decoding and sampling enter?
-2. With the revised weights of 40%, 45%, and 15% above, what can each decoding method produce?
+2. If the next-token weights changed to 40% ` door`, 45% ` file` and 15% ` window`, what could each decoding method produce?
 3. Explain why adding a definition to a chat can change the next reply, and why a later model call might lose access to that definition.
 4. Draw the file-count exchange from memory. Mark the first point where the harness has evidence for the number 42.
 
-**Check your explanation**
+**Stop here.** Answer every question aloud before you read on.
 
-1. The tokenizer encodes the prompt as token IDs. The model scores possible next tokens, the decoder chooses one, and the process repeats with the chosen token appended.
+### Answers
+
+1. The tokenizer encodes the prompt as token IDs. The model scores possible next tokens, the decoder chooses one, and the process repeats with the chosen token appended. The choice between greedy and sampling is made by the decoder, at each of those steps.
 2. Greedy picks ` file` at 45%. Sampling can pick any of the three, including ` window` at 15%.
-3. Inference conditions on the supplied context. The new definition changes that context. If the application later omits it, the model loses that cue. Training changes the weights.
+3. Inference conditions on the supplied context. The new definition changes that context. If the application later omits it, the model loses that cue. Training changes the weights; a chat message doesn't.
 4. Model request → harness checks and invocation → tool reads and counts → harness receives 42 → harness supplies result to model → model answers. The harness first has evidence for the count when the tool returns successfully.
-
