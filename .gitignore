@@ -31,6 +31,9 @@ htmlcov/
 .claude/settings.local.json
 CLAUDE.local.md
 
+# The current study activity: a copy of the plan's text, rewritten each session
+current_activity.md
+
 # Evaluation trial workspaces: disposable repository copies reset for each trial.
 # Trial results, traces, and grades are evidence; store them outside this directory.
 eval/workspaces/

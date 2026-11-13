@@ -7,6 +7,7 @@ Root design file. It covers *how* the work is put together; *why* is in [product
 | Path | Holds |
 | ---- | ----- |
 | `study_plan.md` | The plan: its phases and checklists, the progress log and the next-session entry |
+| `current_activity.md` | The activity being worked on, quoted from the plan with the content it links to, for rereading outside a session. Gitignored, and rewritten at the start of each session |
 | `practice/<slug>/` | One coding exercise: `<slug>.py`, `test_<slug>.py`, the frozen first attempt `<slug>_attempt.py`, and a `README.md`. [practice/README.md](../practice/README.md) gives the steps and the slug's form |
 | `notes/p<phase>_<topic>.md` | Notes on a study topic, and explanations or stories the human gave, each with Claude's review of it |
 | `src/branch_eval/` | The Python package: Phase 1's results reader, then the evaluation's grader and runner |
