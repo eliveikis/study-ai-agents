@@ -9,7 +9,7 @@ A phase is one or more sessions. In each session:
 1. Run `/study-start`. Answer its recall questions, and it tells you the phase, your first action and its target time. Say the activity is timed if you want it to track the minutes.
 2. Do that action:
    - **Coding exercise:** follow [practice/README.md](practice/README.md).
-   - **Concept or story** ("Can explain …", the Repocop story): explain it to Claude without notes. Claude reviews it and saves it in `notes/`, which is the evidence that ticks the box.
+   - **Concept or story** ("Can explain …", the Repocop story): write it out from memory, as [practice/README.md](practice/README.md) describes, and ask Claude to review it. A review that finds the item met is the evidence that ticks the box.
    - **Evaluation harness:** build it as a change, as [specs/changes/README.md](specs/changes/README.md) describes.
 3. Run `/study-end` and answer its questions. It logs the session, ticks the boxes you have evidence for, sets up the next session and commits.
 

@@ -8,8 +8,8 @@ Root design file. It covers *how* the work is put together; *why* is in [product
 | ---- | ----- |
 | `study_plan.md` | The plan: its phases and checklists, the progress log and the next-session entry |
 | `current_activity.md` | The activity being worked on, quoted from the plan with the content it links to, for rereading outside a session. Gitignored, and rewritten at the start of each session |
-| `practice/<slug>/` | One coding exercise: `<slug>.py`, `test_<slug>.py`, and a `README.md` that records the review's mistakes and the assistance used. [practice/README.md](../practice/README.md) gives the steps and the slug's form |
-| `notes/p<phase>_<topic>.md` | Notes on a study topic, and explanations or stories the human gave, each with Claude's review of it |
+| `practice/<slug>/` | One exercise: a coding problem (`<slug>.py` and `test_<slug>.py`) or a written explanation or story (`<slug>.md`), with a `README.md` that records Claude's review and the assistance used. [practice/README.md](../practice/README.md) gives the steps and the slug's form |
+| `notes/p<phase>_<topic>.md` | Notes on a study topic |
 | `src/branch_eval/` | The Python package: Phase 1's results reader, then the evaluation's grader and runner |
 | `tests/` | Tests of `branch_eval` |
 | `eval/` | The evaluation's artifacts: scenarios, trial records (`eval/results/*.jsonl`) and saved traces. They're evidence, so they're committed |

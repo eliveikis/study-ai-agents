@@ -23,7 +23,7 @@ A commit shows a change landed. A trace shows behavior on one run. A claim that 
 - **Next 40 seconds:** Tell the stale-branch incident. Explain how checking live branch state before planning addresses the observed failure. Name a plausible remaining failure even with the revision.
 - **Last 20 seconds:** State what evidence you have, and what it does and doesn't show.
 
-Save the short story and two gaps in the progress log. For each gap, record a concrete next check, such as explaining token IDs from memory or writing a dictionary test unaided.
+Write the story out as the project's `practice/README.md` describes, under Explanations and stories.
 
 ---
 
