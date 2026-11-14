@@ -25,14 +25,15 @@ def group_anagrams(input: list[str]) -> list[list[str]]:
             # group of anagrams.
             buckets_by_len[val_len] = {sorted_val: [val]}
         else:
-            # see if this letter combo has been entered
+            # see if this letter combo has not yet been entered
             group = anagram_groups.get(sorted_val, None)
             if group is None:
                 # add the first one
                 anagram_groups[sorted_val] = [val]
             else:
-                # append
-                group = group.append(val)
+                # append if not dupe
+                if val not in group:
+                    group = group.append(val)
 
     # transform to group of groups
     result: list[list[str]] = []
