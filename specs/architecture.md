@@ -58,7 +58,7 @@ A row in `study_plan.md`'s progress log covers one phase's work in one session:
 | ------ | ----- |
 | Date | `YYYY-MM-DD` |
 | Phase/activity | `Phase N — ` and the titles of the activities worked on, as the plan names them, such as `Phase 1 — Python through a useful program` |
-| Minutes | A whole number, as the human reports it |
+| Minutes | A whole number, as the human reports it, or Claude's estimate when they don't, marked as one in the row |
 | Evidence or artifact | The files the work produced, the evidence for any checkbox ticked, and `Claude wrote:` with what and where, when Claude wrote or fixed code |
 | Mistakes and unresolved questions | As the human reports them |
 | Next priority | What comes next, including unfinished work when a phase stops over budget |
