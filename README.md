@@ -6,7 +6,7 @@ Interview prep for a Senior AI Engineer (AI tools) role. The plan is [study_plan
 
 A phase is one or more sessions. In each session:
 
-1. Run `/study-start`. Answer its recall questions, and it tells you the phase, your first action and its target time. Say the activity is timed if you want it to track the minutes.
+1. Run `/study-start`. It tells you the phase, your first action and its target time. Say the activity is timed if you want it to track the minutes.
 2. Do that action:
    - **Coding exercise:** follow [practice/README.md](practice/README.md).
    - **Concept or story** ("Can explain …", the Repocop story): write it out from memory, as [practice/README.md](practice/README.md) describes, and ask Claude to review it. A review that finds the item met is the evidence that ticks the box.

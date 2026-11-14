@@ -24,7 +24,6 @@ Coding fluency and project implementation details have not been independently as
 ## Working rules
 
 - Timebox phases. When an activity overruns, cut its depth, not the topic: record what's left as unfinished, for that topic's next layer, and promote it only when it blocks an important next step.
-- Begin each phase with five minutes of recall from the previous phase. Include this within the phase budget.
 - End each phase by updating the progress log and next-session entry. Reserve time within the final activity.
 - Write the first attempt at coding exercises without AI. Use documentation during learning exercises, then practice selected exercises without references.
 - Explain the approach, edge cases, and time/space complexity aloud during timed coding.

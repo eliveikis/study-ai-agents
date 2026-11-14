@@ -71,12 +71,7 @@ A phase's status in the phase overview is `Not started`, then `In progress` once
 
 ```mermaid
 flowchart TD
-    start["Run /study-start"] --> first{"Which session?"}
-    first -- "plan's first" --> next
-    first -- "phase's first" --> phaseRecall["About 5 minutes of recall on the previous phase"]
-    first -- "later" --> briefRecall["Brief recall of the previous session"]
-    phaseRecall --> next["Current phase, first action, target time"]
-    briefRecall --> next
+    start["Run /study-start"] --> next["Current phase, first action, target time"]
     next --> work["Exercises, notes, branch_eval, with the tutor"]
     work --> finish["Run /study-end"]
     finish --> log["Log rows, evidenced ticks, phase status, next-session entry"]
