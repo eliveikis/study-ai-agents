@@ -1,7 +1,5 @@
 # First unique character
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Python you'll need
 
 **Strings are sequences.** You can index a string (`s[0]`), measure it (`len(s)`), and loop over it. `for ch in s` gives each character; `for i, ch in enumerate(s)` gives each index with its character. `python-enumeration.md` has more loop forms.

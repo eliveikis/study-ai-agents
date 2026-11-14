@@ -1,7 +1,5 @@
 # Inference and the agent loop
 
-Allow 20 minutes. Spend 6 minutes on tokens and prediction, 5 on context and training, 5 tracing the tool call, and 4 on the questions at the end, which sit behind a spoiler warning.
-
 ## Trace one prediction
 
 Imagine typing `Please open the file`. You see letters arranged into words. The language model needs a sequence of numbers to work with. A **token** is one unit in that sequence. For ordinary text, each unit stands for a piece of the original text. The **vocabulary** is the model's inventory of possible units. Each entry has a number called its **token ID**.

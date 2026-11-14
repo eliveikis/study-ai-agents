@@ -1,7 +1,5 @@
 # Context, tool schemas, and MCP
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Reconstruct what the model could know
 
 Context is the information supplied to a model call. Scoped loading means selecting information relevant to the current task, such as the requirement for the current branch. Compaction replaces older conversation material with a shorter representation. A summary can preserve yesterday’s branch name perfectly and still be wrong about the current checkout.

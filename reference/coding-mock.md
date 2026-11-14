@@ -1,7 +1,5 @@
 # Coding mock
 
-Use 10–20 minutes to set up. The worked solution is at the end, behind a spoiler warning.
-
 ## What this mock draws on
 
 No new material: a mock tests what you can already do. This one uses dictionaries, counting and tests, from `results-reader.md`, `first-unique-character.md` and `group-anagrams.md`. Revisit those guides' teaching sections beforehand, not their answers.

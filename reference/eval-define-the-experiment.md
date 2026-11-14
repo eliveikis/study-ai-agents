@@ -1,7 +1,5 @@
 # Define the branch experiment
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Specify what would count as success
 
 An experiment question identifies a change and a measurable consequence. Here the change is the branch section of the implement skill. The consequence is whether the agent works on the correct requirement after a branch changes outside its session. A scenario describes the starting conditions. A trial is one execution of a scenario under one configuration. A grader measures the result using evidence it controls.

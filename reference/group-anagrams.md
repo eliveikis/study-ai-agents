@@ -1,6 +1,6 @@
 # Group anagrams
 
-Use 10–20 minutes to study the material below. The dictionary basics and cost rules in `first-unique-character.md` apply here too. Questions and answers are at the end, behind a spoiler warning.
+The dictionary basics and cost rules in `first-unique-character.md` apply here too.
 
 ## Python you'll need
 

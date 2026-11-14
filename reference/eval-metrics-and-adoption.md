@@ -1,7 +1,5 @@
 # Metrics, grading, and adoption
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Choose what a positive verdict means
 
 Suppose a review check flags a PR when it finds a defect. A true positive is a flagged real defect. A false positive consumes reviewer time on sound code. A false negative lets a real defect through. If your evaluation's "positive" instead means a task passed, define that convention explicitly before interpreting its errors.

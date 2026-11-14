@@ -1,7 +1,5 @@
 # Repeat and compare configurations
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Make one comparison interpretable
 
 A configuration is the complete setup for a run. Here the intended difference is the branch text. For baseline, start from the current skill and restore only the branch wording from 54462fd. For state-check, use the branch wording in d3b9bf8. Both use the revised step 3.

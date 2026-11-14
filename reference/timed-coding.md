@@ -1,7 +1,5 @@
 # Timed coding
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Choose the mechanism you need to practice
 
 Use your mistake log. If you repeatedly lost duplicate counts, pick a hash-map problem. If boundary indices caused failures, choose two pointers.

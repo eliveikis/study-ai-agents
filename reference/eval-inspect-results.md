@@ -1,7 +1,5 @@
 # Inspect and calibrate the results
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Read one result backwards
 
 Start with a reported outcome. Find the grader output that produced it, the final repository it inspected, and the starting state for that attempt. Confirm the grader actually ran and completed. An empty log or missing result cannot establish that the task passed.

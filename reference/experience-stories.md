@@ -1,7 +1,5 @@
 # Experience stories and final recall
 
-Use 10–20 minutes to study the material below. Recall questions and answers are at the end, behind a spoiler warning.
-
 ## Build four evidence-backed stories
 
 An interviewer needs to understand the situation, your individual decision, alternatives you considered, and what happened afterward. A shipped change, a measured outcome and a teammate's observation support different claims. Use the strongest evidence you actually have and name any missing measurement.

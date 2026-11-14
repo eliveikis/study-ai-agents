@@ -1,7 +1,5 @@
 # Run real trials
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Follow one trial end to end
 
 A runner coordinates the experiment. The agent harness executes the agent. The grader inspects the resulting repository. Keeping these jobs distinct lets you tell whether a bad outcome came from the task, its execution, or its measurement.

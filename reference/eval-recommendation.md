@@ -1,7 +1,5 @@
 # Write a one-page recommendation
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Start with the decision someone needs to make
 
 Your reader knows engineering but may never have used RepoCop. Introduce the task in one sentence: an agent implementing a requirement must identify the current branch after a developer switches branches outside the conversation. Then state the decision your pilot can inform, such as whether to retain the state-check wording for a larger trial.

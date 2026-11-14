@@ -1,7 +1,5 @@
 # Python through a useful program
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Read one trial at a time
 
 A trial is one attempt by an agent at a scenario. JSON is a text format for values such as objects, strings, and numbers. JSONL puts a complete JSON value on each physical line, so a reader can handle one trial at a time without loading the entire file.

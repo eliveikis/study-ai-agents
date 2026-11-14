@@ -1,7 +1,5 @@
 # Retrieval and fine-tuning
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Answer a question about yesterday’s code change
 
 Suppose a developer asks, “Which setting limits parallel branch checks?” The answer lives in a private repository whose contents change daily. Retrieval-augmented generation (RAG) finds relevant material at request time and supplies it as context for a generated answer.

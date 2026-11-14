@@ -1,7 +1,5 @@
 # Repair the largest exposed gap
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Select an observable failure
 
 Read the two mock records. Prefer a recurring mistake that blocked a correct result or explanation. "Weak on Python" is hard to retest. "Counted duplicate deliveries as separate jobs" has a small counterexample and a clear success condition. If gaps appear equally important, choose the one for which a short exercise can supply fresh evidence.

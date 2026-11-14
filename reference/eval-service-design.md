@@ -1,7 +1,5 @@
 # Design an overnight evaluation service
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Building blocks
 
 **Job and attempt.** A job is the logical task, such as running S1 under baseline for repetition 3. An attempt is one execution of that job. Planned repetitions are separate jobs, with their own IDs. A retry is a new attempt of the same job.

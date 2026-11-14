@@ -1,7 +1,5 @@
 # Repocop story
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Build a story from one observed incident
 
 Start with the developer's task. Someone finished work on one branch, switched branches manually, and asked the agent to implement the next requirement. The agent relied on the previous branch and reported the earlier task complete. Someone listening now knows what failed and why it mattered.

@@ -1,7 +1,5 @@
 # Comparing two agents' results
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Totals hide which items changed
 
 Suppose two students take the same 10-question quiz. A gets 8 right and B gets 7. Each question has one of four results: both right, only A right, only B right, or both wrong. The totals, 8 and 7, are only the margins of that four-way table, and very different tables produce the same totals. In one, A got right every question B did, plus one more. In another, each got right several questions the other missed. Results on the same items are **paired**, and the pairs tell you more than the totals.

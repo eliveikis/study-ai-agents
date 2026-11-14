@@ -1,7 +1,5 @@
 # The results reader over HTTP
 
-Use 10–20 minutes to study the material below. Questions and answers are at the end, behind a spoiler warning.
-
 ## Move the input boundary
 
 The original reader opens a local JSONL file. Now an HTTP client requests a URL and receives a response with a status and body. A successful HTTP status tells you the request succeeded at the protocol level. The body may still be malformed JSONL. Keep transport, parsing, validation, aggregation and display distinct enough to test them separately.
