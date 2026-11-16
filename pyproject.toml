@@ -19,6 +19,7 @@ testpaths = ["practice", "tests"]
 
 [dependency-groups]
 dev = [
+    "fastapi[standard]>=0.163.1",
     "pytest>=9.2.0",
     "ruff>=0.17.4",
 ]
