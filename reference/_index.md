@@ -43,7 +43,7 @@ The study guide for each activity in [study_plan.md](../study_plan.md), by the a
 
 **p2a4: Compare two agents**
 
-- [eval-comparing-results.md](eval-comparing-results.md)
+- [agent-evaluation.md](agent-evaluation.md)
 - [Anthropic: A statistical approach to model evaluations](https://www.anthropic.com/research/statistical-approach-to-model-evals)
 
 **p2a5: Evaluation-service basics**
@@ -57,19 +57,16 @@ The study guide for each activity in [study_plan.md](../study_plan.md), by the a
 
 ## Phase 3
 
-**p3a1: Define the experiment for S1**
+**p3a1: RepoCop's first eval**
 
-- [eval-define-the-experiment.md](eval-define-the-experiment.md)
+- [agent-evaluation.md](agent-evaluation.md)
+- [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 
-**p3a2: Run S1 under both configurations**
+**p3a2: Explain the eval**
 
-- [eval-run-trials.md](eval-run-trials.md)
+- [agent-evaluation.md](agent-evaluation.md)
 
-**p3a3: Grade and inspect the result**
-
-- [eval-inspect-results.md](eval-inspect-results.md)
-
-**p3a4: Timed coding**
+**p3a3: Timed coding**
 
 - [timed-coding.md](timed-coding.md)
 
@@ -98,10 +95,9 @@ The study guide for each activity in [study_plan.md](../study_plan.md), by the a
 
 - [timed-coding.md](timed-coding.md)
 
-**p5a2: Run the remaining scenarios**
+**p5a2: More eval tasks**
 
-- [eval-define-the-experiment.md](eval-define-the-experiment.md)
-- [eval-run-trials.md](eval-run-trials.md)
+- [agent-evaluation.md](agent-evaluation.md)
 
 **p5a3: Rate limits, retries, and timeouts**
 
@@ -122,7 +118,7 @@ The study guide for each activity in [study_plan.md](../study_plan.md), by the a
 
 **p6a1: Repeat and compare**
 
-- [eval-repeat-and-compare.md](eval-repeat-and-compare.md)
+- [agent-evaluation.md](agent-evaluation.md)
 
 **p6a2: Crash recovery and duplicate results**
 
@@ -141,12 +137,12 @@ The study guide for each activity in [study_plan.md](../study_plan.md), by the a
 
 **p7a2: Metrics, grading, and adoption**
 
-- [eval-metrics-and-adoption.md](eval-metrics-and-adoption.md)
+- [agent-evaluation.md](agent-evaluation.md)
 - [Anthropic: A statistical approach to model evaluations](https://www.anthropic.com/research/statistical-approach-to-model-evals)
 
 **p7a3: Write a recommendation**
 
-- [eval-recommendation.md](eval-recommendation.md)
+- [agent-evaluation.md](agent-evaluation.md)
 
 **p7a4: Repocop with evidence**
 

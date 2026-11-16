@@ -6,7 +6,7 @@ Prepare for a Senior AI Engineer, AI tools role.
 
 Budget approximately 20 hours or less. Work in phases of up to four hours. Each phase builds on the previous work and leaves a usable result if preparation stops there. Phases 1–4 cover every topic once and end in mock interviews. Phases 5–7 each take the topics one layer deeper, so a budget that runs out cuts depth rather than topics. The timings are targets, not requirements to finish every exercise.
 
-The interview format and date are unconfirmed. This plan assumes live coding is plausible and prioritizes independent Python fluency, AI fundamentals, and a small evaluation that can be defended in discussion. Adjust the balance if the recruiter provides specific guidance.
+The interview format and date are unconfirmed. This plan assumes live coding is plausible and prioritizes independent Python fluency, AI fundamentals, and a small evaluation, built in RepoCop, that can be defended in discussion. Adjust the balance if the recruiter provides specific guidance.
 
 ## Starting assessment
 
@@ -16,7 +16,7 @@ The interview format and date are unconfirmed. This plan assumes live coding is 
 | Python               | Prior professional experience, currently rusty; extensive documentation needed | Practice writing, testing, and debugging without AI, including timed exercises |
 | Agent workflows      | Built Repocop to synchronize agent development templates and expose spec workflow status | Explain personal design decisions, failures, and verified outcomes |
 | AI fundamentals      | Gaps in tokenization, decoding, embeddings, fine-tuning, tool calling, and MCP | Build accurate explanations and connect them to workflow behavior |
-| Evaluations          | Sensible reasoning about representativeness, quality, cost, and comparisons; no formal implementation experience | Complete a small reproducible experiment with independent grading and failure analysis |
+| Evaluations          | Sensible reasoning about representativeness, quality, cost, and comparisons; no formal implementation experience | Add a small reproducible eval to RepoCop, with independent grading and failure analysis |
 | Systems and adoption | Relevant rate-limiter experience and broad engineering judgment | Practice durable job execution, CI tradeoffs, and explicit adoption criteria |
 
 Coding fluency and project implementation details have not been independently assessed. This is a preparation guide, not a prediction of interview success.
@@ -37,10 +37,10 @@ Coding fluency and project implementation details have not been independently as
 | ----- | ------------------------------------------------------------------ | ---------------------------------------------------- | ----------- |
 | 1     | Python baseline, coding basics, inference and agent loop           | Working results reader and an initial skill baseline | Done        |
 | 2     | A first layer of every other topic                                 | A first answer for every interview topic             | Done        |
-| 3     | The smallest real evaluation, timed coding                         | S1 graded under both configurations                  | Not started |
+| 3     | RepoCop's first eval, timed coding                                 | A RepoCop eval grading both skill versions on one task | Not started |
 | 4     | Mock interviews and repair                                         | Evidence of performance under interview conditions   | Not started |
-| 5     | Second layer: remaining scenarios, reliability, retrieval, context | All four scenarios under both configurations         | Not started |
-| 6     | Third layer: repeats, crash recovery, the reader over HTTP         | Repeated trials and a crash-safe service design      | Not started |
+| 5     | Second layer: more eval tasks, reliability, retrieval, context     | RepoCop's eval on several tasks under both versions  | Not started |
+| 6     | Third layer: eval repeats, crash recovery, the reader over HTTP    | Repeated eval runs and a crash-safe service design   | Not started |
 | 7     | Metrics, recommendation, Repocop with evidence                     | One-page recommendation                              | Not started |
 | 8     | Final rehearsal, just before the interview                         | Final mock results and prioritized remaining gaps    | Not started |
 
@@ -85,20 +85,19 @@ Coding fluency and project implementation details have not been independently as
 - [ ] Can answer the 16-versus-14 question without claiming more than the totals show.
 - [ ] Mini-mock answers are recorded, with the questions where you had to guess.
 
-## Phase 3 — Run the smallest real evaluation
+## Phase 3 — Build RepoCop's first eval
 
 **Budget: three hours**
 
-- [ ] **45 minutes — Define the experiment for S1.** Start from S1 in [Evaluation project scope](#evaluation-project-scope), below. Specify its starting repository state, expected branch behavior, and an independent success check. Record an experiment question and what evidence would support changing the workflow.
-- [ ] **75 minutes — Run S1 under both configurations.** Build the disposable repository fixture and run S1 once under `baseline` and once under `state-check`, using an existing agent invocation method. Run the trials by hand if integration takes too long, and record the manual steps. Save actual outcomes, errors, elapsed time, and available traces.
-- [ ] **30 minutes — Grade and inspect the result.** Write a small Python grader that checks the final branch from repository state. Check that it ran on both trials, and test it against a deliberately wrong result. Inspect a failure if one occurred, or a successful trace if not, and distinguish task failure from execution or grading errors.
+- [ ] **120 minutes — RepoCop's first eval.** In RepoCop, build the smallest eval that runs one task, the stale-branch failure in [Evaluation project](#evaluation-project) below, under both versions of the `implement` skill. Grade it with a script, and test the script on a deliberately wrong result. It needn't meet every requirement yet: more tasks and repeats come in Phases 5 and 6.
+- [ ] **30 minutes — Explain the eval.** Without notes, explain the eval in about two minutes: what it tests, how it grades, what it found, and what you'd do next. Tell task failures apart from execution and grading errors.
 - [ ] **30 minutes — Timed coding.** Solve one problem in Python against the clock, then repair mistakes. Prioritize strings, hash maps, sorting, two pointers, stacks/queues, or basic traversal according to earlier weaknesses. Explain complexity and test cases.
 
 ### Completion evidence
 
-- [ ] A task definition, starting-state identifier, configuration, and outcome exist for each trial.
-- [ ] Success is determined from repository state and acceptance checks, rather than the agent's completion message.
-- [ ] A deliberately wrong outcome is rejected by the grader.
+- [ ] RepoCop has an eval that runs the stale-branch task under both skill versions, and grades each run from the repository rather than the agent's message.
+- [ ] The eval's grader rejects a deliberately wrong result.
+- [ ] Can explain the eval in two minutes without notes.
 - [ ] Have a timed coding result and a short list of recurring mistakes.
 
 ## Phase 4 — Rehearse under interview conditions
@@ -120,14 +119,14 @@ Coding fluency and project implementation details have not been independently as
 **Budget: three and a half hours**
 
 - [ ] **30 minutes — Timed coding on the mock's mistakes.** Solve one timed problem chosen from the mock's mistakes, then repair them. Explain complexity and test cases.
-- [ ] **75 minutes — Run the remaining scenarios.** Define S2, S3 and S4 as you did S1, then run each once under both configurations, with the same fixture, grader, and settings. Save outcomes, errors, elapsed time, and available traces. If you automate the runs, fake the external invocation boundary in a test so runner behavior can be checked without paid calls.
+- [ ] **75 minutes — More eval tasks.** In RepoCop, add tasks around the stale-branch one, and run each under both versions: a control, where nothing changes and both versions should pass, and a task where the agent should stop and change nothing, such as when uncommitted work is in the way. If you automate the runs, test the runner with a fake agent, so its tests make no paid calls.
 - [ ] **40 minutes — Rate limits, retries, and timeouts.** Extend the job-service sketch with shared rate limits, a retry policy, timeouts, and the arithmetic for finishing overnight. Explain how to distinguish failed tasks from incomplete or broken executions.
 - [ ] **30 minutes — The retrieval pipeline.** Explain embeddings, chunking, query retrieval, reranking, and generation using retrieved context. Diagnose a wrong answer stage by stage.
 - [ ] **35 minutes — Context management.** Explain scoped context loading, compaction, and durable working state. Review one concrete context-related failure from your experience.
 
 ### Completion evidence
 
-- [ ] All four scenarios have recorded results under both configurations.
+- [ ] RepoCop's eval has a control task and a should-stop task, with results under both versions.
 - [ ] Can distinguish retrieval-pipeline tuning from model fine-tuning.
 - [ ] Can describe how a change in context or tools could alter outcomes with the same model.
 
@@ -135,13 +134,13 @@ Coding fluency and project implementation details have not been independently as
 
 **Budget: two and a half hours**
 
-- [ ] **60 minutes — Repeat and compare.** Compare the `baseline` and `state-check` configurations in [Evaluation project scope](#evaluation-project-scope): the original branch instruction and an explicit state-check instruction. Keep the model, tools, starting states, and budgets fixed where possible. Repeat selected scenarios under both configurations and report per-scenario outcomes.
+- [ ] **60 minutes — Repeat and compare.** In RepoCop, run each eval task several times under each version of the skill, keeping everything but its branch wording fixed, and compare the versions task by task.
 - [ ] **45 minutes — Crash recovery and duplicate results.** Extend the job-service sketch with attempt IDs, duplicate-result handling, and persisted results. Trace a worker that crashes, and one that reports after its lease expired, and say which result is authoritative.
 - [ ] **45 minutes — The results reader over HTTP.** Rehearse the Phase 1 results reader as an interview task, changed to fetch the JSONL from an HTTP API instead of a file, and test it through a fake client or mocked HTTP boundary so no test makes a network call. Include the reader work deferred in the progress log's 2026-11-12 row.
 
 ### Completion evidence
 
-- [ ] Both configurations have recorded results on the same scenario set, with repeats on a subset.
+- [ ] RepoCop's eval has repeated results for both versions on every task, compared task by task.
 - [ ] Can explain what was controlled and what still varies.
 - [ ] Have a short result summary that states the small sample and remaining uncertainty.
 - [ ] Can explain crash recovery without losing jobs or counting retries as independent successes.
@@ -152,7 +151,7 @@ Coding fluency and project implementation details have not been independently as
 
 - [ ] **30 minutes — Timed coding on recurring mistakes.** Solve one timed problem on the most frequent mistakes so far, then repair them.
 - [ ] **60 minutes — Metrics, grading, and adoption.** Review task success, consistency across trials, false positives/negatives, severity, latency, API cost, and human review effort. Discuss protected grading, PR review integration, permissions, advisory versus blocking checks, and explicit expansion/stop criteria.
-- [ ] **45 minutes — Write a recommendation.** Summarize the experiment question, method, results, failure examples, limitations, and recommended next step in approximately one page. Include an alternative explanation for the findings. Then explain the experiment, its limitations, and the next experiment aloud, as in an interview.
+- [ ] **45 minutes — Write a recommendation.** Decide whether RepoCop keeps the revised skill. Summarize the question, method, results, failure examples, limitations, and recommended next step in approximately one page. Include an alternative explanation for the findings. Then explain the experiment, its limitations, and the next experiment aloud, as in an interview.
 - [ ] **45 minutes — Repocop with evidence.** Rehearse the Repocop story with what your evaluation measured: the problem, architecture, your decisions, one failure, and how you know the change helps.
 
 ### Completion evidence
@@ -177,68 +176,35 @@ Coding fluency and project implementation details have not been independently as
 - [ ] Have specific experience stories rather than general statements about working style.
 - [ ] Remaining gaps are recorded honestly and prioritized.
 
-## Evaluation project scope
+## Evaluation project
 
-### Initial question
+You add evals to RepoCop as real work in that repository, so they're yours to put on your resume and discuss in the interview. This plan sets only the goal and the requirements: how you build the eval is up to you. This repository is where you learn the concepts and rehearse explaining the work.
 
-When the branch changes outside the agent's session between tasks, does requiring the branch check as the agent's first command make `/implement` work on the current branch's requirement instead of the one it remembers?
+### Why RepoCop needs one
 
-### Origin
+On Nov 2, RepoCop's `implement` skill was revised (`d3b9bf8`) after a failure you saw. After working on one branch, you switched branches by hand and ran `/implement` without naming a requirement. The agent assumed it was still on the old branch, reported that branch's work as already done, and asked what to do next. The revision makes checking the branch the agent's first command. Nothing yet shows that it fixes the failure.
 
-RepoCop's template `implement` skill gained its branch section in `54462fd` (Oct 30, requirement `implement-starts-its-branch`). `d3b9bf8` (Nov 2) revised it after two observed failures:
+### Goal
 
-1. **Stale branch.** After a previous task on one branch, you switched branches by hand and ran `/implement` with no path. The agent assumed it was still on the previous branch, picked that branch's requirement, reported it already complete, and asked whether to start another. Checking the branch would have found the right requirement, still to do.
-2. **Redundant check.** The agent ran `make check` before starting, though the checks had just run while completing the previous work.
+Show, with evidence, whether the revised skill makes the agent work on the branch it's actually on rather than the one it remembers, and be able to explain how you know.
 
-The revision makes `git status --porcelain --branch` the first command, picks the branch from its output before reading or planning, requires the reply to open by naming the requirement and branch, and says not to run the check command before starting.
+### Requirements
 
-### Configurations
+The finished eval meets all of these. Phases 3, 5 and 6 build up to them.
 
-- `baseline`: the current skill with only its branch text reverted to the `54462fd` wording. Get the old text with `git -C ~/projects/repocop show 54462fd:templates/default-repo/.claude/skills/implement/SKILL.md`.
-- `state-check`: the current skill (`d3b9bf8`).
-
-Both keep the revised step 3, so the branch text is the only difference. Comparing step 3's two wordings is a separate follow-up experiment.
-
-### Policy and scenarios
-
-Derive the expected behavior from RepoCop's archived `implement-starts-its-branch` requirement, and define it before running trials.
-
-A fresh session has no remembered branch, so it can't reproduce failure 1. Each trial therefore has three steps in one session:
-
-1. A short previous turn, identical for both configurations and not using `/implement`.
-2. The runner changes the repository outside the session, as you did by hand.
-3. The task turn runs `/implement`.
-
-| ID | Previous turn | Then the runner | Task turn | Expected |
-| -- | ------------- | --------------- | --------- | -------- |
-| S1 | On `old-task`: runs the checks and confirms old-task is done | Switches to the existing `new-task` | `/implement` (no path) | Implements `new-task.md` on `new-task` |
-| S2 | On `new-task`: reads its requirement | Changes nothing | `/implement` (no path) | Same as S1 (control) |
-| S3 | On `new-task` | Switches to `main` | `/implement` with the `new-task.md` path | Switches to `new-task` and implements there |
-| S4 | On `old-task` | Switches to `main` and leaves an uncommitted file | `/implement` with the path | Stops, changes nothing |
-
-Grade on the final repository state. Also record from each trace whether the agent checked the branch before its first switch or edit, and whether it ran `make check` before its first edit.
-
-Use a disposable repository fixture with a tiny implementation task and a local bare repository as `origin` with its HEAD set, since the skill finds the default branch through `origin/HEAD`. Expand beyond these scenarios only if time remains.
-
-### Minimal method
-
-1. Save the specification, branch policy, task scenarios, and immutable starting-state identifiers.
-2. Record agent/harness version, exact model identifier where available, instructions, permissions, and time/token limits.
-3. Reset each trial to its designated starting state. Prevent one trial's edits, notes, or session history from influencing another.
-4. Run the task and save the patch, final repository state, available trace, elapsed time, and token/cost information where exposed. Mark unavailable data explicitly.
-5. Grade using evaluator-owned checks that the agent cannot edit. Verify final branch, required code behavior, and preservation of unrelated changes where relevant.
-6. Check grading executed and report execution errors separately. Record scenario ID, configuration ID, and attempt ID.
-7. Compare baseline and revised instructions on the same scenarios. Repeat a subset to investigate variability. Report counts and scenario-level differences.
-
-This is a pilot evaluation of a narrow workflow behavior. A few tasks and repetitions support learning and diagnosis, with limited evidence for broader adoption claims.
+1. The old wording fails: the eval reproduces the stale-branch failure at least once.
+2. Every run starts from the same repository, built fresh by a script.
+3. A script grades each run from the repository afterwards: which branch it ended on, and what was committed where. The agent can't change that script.
+4. The two versions differ only in the skill's branch wording. The old wording is in `54462fd`.
+5. Each version runs several times on each task.
+6. The keep-or-revert rule is written down before any run.
+7. Each run records its result, time and tokens, and keeps its transcript.
 
 ### Scope limits
 
-- Use an existing CLI or invocation path. Avoid building a new agent framework.
-- If invocation integration consumes too much time, run trials manually and use Python to validate and summarize saved artifacts. Record the manual steps.
-- Keep grading separate from the agent's workspace and control. Check what permissions the agent actually has.
-- Use fakes to test the runner. Use real agent executions for conclusions about agent behavior.
-- Add no dashboard, distributed runner, plugin system, or general benchmarking framework during this preparation cycle.
+- Run the agent with an existing CLI. Don't build an agent framework.
+- Running trials by hand is fine if automating them takes too long, as long as you record the steps.
+- No dashboard, distributed runner or general benchmarking framework.
 
 ## Selected reference material
 
@@ -246,7 +212,7 @@ Use the sections that address a current exercise or knowledge gap. Reading the e
 
 - Python language and standard-library reference for the exercises. [Python documentation](https://docs.python.org/3/)
 - Introductory LLM material for tokenization and model concepts. [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/en/chapter1/1)
-- Agent task design, grading, and evaluation practices. [Anthropic agent evaluation guide](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)
+- Agent task design, grading, and evaluation practices. [Anthropic agent evaluation guide](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 - Process-level and end-to-end agent evaluation. Treat this as technical reading, not an interview syllabus. [NVIDIA agent evaluation article](https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/)
 
 ## Recruiter questions
@@ -274,7 +240,7 @@ Use the sections that address a current exercise or knowledge gap. Reading the e
 ## Next session
 
 - **Current phase:** Phase 3
-- **First action:** Define the experiment for S1.
-- **Timebox:** 45 minutes.
-- **Resume references:** This plan, including its Evaluation project scope, the latest progress-log entries, and the guide listed for p3a1 in `reference/_index.md`.
+- **First action:** Build RepoCop's first eval.
+- **Timebox:** 120 minutes.
+- **Resume references:** This plan, including its Evaluation project, the latest progress-log entries, and the guide listed for p3a1 in `reference/_index.md`.
 - **Known blockers:** Interview date and exact assessment format are unconfirmed.

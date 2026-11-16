@@ -2,7 +2,7 @@
 
 ## What this mock draws on
 
-No new material. The four rounds cover AI fundamentals (`inference-and-agent-loop.md`, `retrieval-and-fine-tuning.md`, `context-tools-and-mcp.md`), experiment design (`eval-define-the-experiment.md`, `eval-repeat-and-compare.md`), failure diagnosis (`eval-inspect-results.md`) and systems (`eval-service-design.md`). Revisit those guides' teaching sections beforehand. If a partner runs the mock, they read the questions and you don't.
+No new material. The four rounds cover AI fundamentals (`inference-and-agent-loop.md`, `retrieval-and-fine-tuning.md`, `context-tools-and-mcp.md`), experiment design and failure diagnosis (`agent-evaluation.md`), and systems (`eval-service-design.md`). Revisit those guides' teaching sections beforehand. If a partner runs the mock, they read the questions and you don't.
 
 ## Run four interview rounds
 

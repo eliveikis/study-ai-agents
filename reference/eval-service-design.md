@@ -2,7 +2,7 @@
 
 ## Building blocks
 
-**Job and attempt.** A job is the logical task, such as running S1 under baseline for repetition 3. An attempt is one execution of that job. Planned repetitions are separate jobs, with their own IDs. A retry is a new attempt of the same job.
+**Job and attempt.** A job is the logical task, such as running one eval task under one configuration for repetition 3. An attempt is one execution of that job. Planned repetitions are separate jobs, with their own IDs. A retry is a new attempt of the same job.
 
 **Durable queue.** Stores pending work so it survives restarts. Most queues deliver *at least once*: a message stays until the consumer acknowledges it, and if the consumer dies first, the queue delivers it again. So the same job can arrive twice, and handling it twice must be harmless. An operation that's harmless to repeat is **idempotent**.
 
