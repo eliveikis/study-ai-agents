@@ -10,7 +10,7 @@ A phase is one or more sessions. In each session:
 2. Do that action:
    - **Coding exercise:** follow [practice/README.md](practice/README.md).
    - **Concept or story** ("Can explain …", the Repocop story): write it out from memory, as [practice/README.md](practice/README.md) describes, and ask Claude to review it. A review that finds the item met is the evidence that ticks the box.
-   - **Evaluation harness:** build it as a change, as [specs/changes/README.md](specs/changes/README.md) describes.
+   - **RepoCop eval:** build it in RepoCop, to the plan's Evaluation project. Then come back and explain it here, as with a concept.
 3. Run `/study-end` and answer its questions. It logs the session, ticks the boxes you have evidence for, sets up the next session and commits.
 
 Keep going until the phase's boxes are ticked or its budget runs out. Once you're over budget, `/study-end` asks whether to stop. After you stop, the next `/study-start` moves you on to the next phase.

@@ -10,29 +10,22 @@ Root design file. It covers *how* the work is put together; *why* is in [product
 | `current_activity.md` | The activity being worked on, quoted from the plan with the content it links to, for rereading outside a session. Gitignored, and rewritten at the start of each session |
 | `practice/<slug>/` | One exercise: a coding problem (`<slug>.py` and `test_<slug>.py`) or a written explanation or story (`<slug>.md`), with a `README.md` that records Claude's review and the assistance used. [practice/README.md](../practice/README.md) gives the steps and the slug's form |
 | `notes/p<phase>_<topic>.md` | Notes on a study topic |
-| `src/branch_eval/` | The Python package: Phase 1's results reader, then the evaluation's grader and runner |
+| `src/branch_eval/` | The Python package: Phase 1's results reader |
 | `tests/` | Tests of `branch_eval` |
-| `eval/` | The evaluation's artifacts: scenarios, trial records (`eval/results/*.jsonl`) and saved traces. They're evidence, so they're committed |
 | `.claude/rules/tutoring.md` | How Claude tutors, in every session |
 | `.claude/skills/study-start/`, `.claude/skills/study-end/` | The routines that open and close a session |
 
 It's a uv project on Python 3.12, with pytest and ruff. `make check` lints everything, then runs every test under `practice/` and `tests/`. It passes when there are no tests yet.
 
-Study work (exercises, notes, the plan) is committed directly on `main`. Only the evaluation harness is delivered as changes on their own branches.
+Study work (exercises, notes, the plan) is committed directly on `main`. The evaluation is built in RepoCop, as that repository's own work, so none of it lives here: [study_plan.md](../study_plan.md) › Evaluation project sets its goal and requirements, and this repository holds the human's explanation of it.
 
 The plan's phases and checklists are the human's. A session writes only the progress log, ticks for checkboxes that have evidence ([.claude/rules/tutoring.md](../.claude/rules/tutoring.md) › Evidence for the plan), the phase statuses and the next-session entry.
-
-### Evaluation trials
-
-A trial's workspace lives outside this repository. Claude Code loads `CLAUDE.md` files from a working directory's parents, so a workspace inside it would put this repository's `CLAUDE.md` and `AGENTS.md` into every trial.
-
-_TBD: how far can user-level configuration and state, such as `~/.claude/CLAUDE.md`, user skills and auto memory, be kept out of trials on a subscription login, where `--bare` is unavailable?_
 
 ## Data model
 
 ### Trial record
 
-One trial's result, as one JSON object per line of a `.jsonl` file.
+The results reader's input: one eval trial's result, as one JSON object per line of a `.jsonl` file.
 
 | Field | Type | Meaning |
 | ----- | ---- | ------- |
@@ -44,7 +37,7 @@ One trial's result, as one JSON object per line of a `.jsonl` file.
 | `error` | string or null | The error message, if there is one |
 | `elapsed_s` | number | Seconds the trial took |
 
-Every field but `error` is required. Readers ignore fields they don't know, so the runner can add its own.
+Every field but `error` is required. Readers ignore fields they don't know, so a record can carry more.
 
 ```json
 {"trial": "t-0001", "scenario": "S1", "config": "baseline", "attempt": 1, "outcome": "pass", "error": null, "elapsed_s": 41.7}
