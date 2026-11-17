@@ -37,7 +37,7 @@ Coding fluency and project implementation details have not been independently as
 | ----- | ------------------------------------------------------------------ | ---------------------------------------------------- | ----------- |
 | 1     | Python baseline, coding basics, inference and agent loop           | Working results reader and an initial skill baseline | Done        |
 | 2     | A first layer of every other topic                                 | A first answer for every interview topic             | Done        |
-| 3     | RepoCop's first eval, timed coding                                 | A RepoCop eval grading both skill versions on one task | Not started |
+| 3     | Explaining RepoCop's eval, timed coding                            | An explanation of RepoCop's eval, from memory        | Not started |
 | 4     | Mock interviews and repair                                         | Evidence of performance under interview conditions   | Not started |
 | 5     | Second layer: more eval tasks, reliability, retrieval, context     | RepoCop's eval on several tasks under both versions  | Not started |
 | 6     | Third layer: eval repeats, crash recovery, the reader over HTTP    | Repeated eval runs and a crash-safe service design   | Not started |
@@ -85,18 +85,15 @@ Coding fluency and project implementation details have not been independently as
 - [ ] Can answer the 16-versus-14 question without claiming more than the totals show.
 - [ ] Mini-mock answers are recorded, with the questions where you had to guess.
 
-## Phase 3 — Build RepoCop's first eval
+## Phase 3 — Explain RepoCop's eval
 
-**Budget: three hours**
+**Budget: one hour**
 
-- [ ] **120 minutes — RepoCop's first eval.** In RepoCop, build the smallest eval that runs one task, the stale-branch failure in [Evaluation project](#evaluation-project) below, under both versions of the `implement` skill. Grade it with a script, and test the script on a deliberately wrong result. It needn't meet every requirement yet: more tasks and repeats come in Phases 5 and 6.
-- [ ] **30 minutes — Explain the eval.** Without notes, explain the eval in about two minutes: what it tests, how it grades, what it found, and what you'd do next. Tell task failures apart from execution and grading errors.
+- [ ] **30 minutes — Explain the eval.** Without notes, explain in about two minutes how RepoCop's eval works: what it tests, how it runs and grades each case, what it found, and what you'd do next. Tell task failures apart from execution and grading errors.
 - [ ] **30 minutes — Timed coding.** Solve one problem in Python against the clock, then repair mistakes. Prioritize strings, hash maps, sorting, two pointers, stacks/queues, or basic traversal according to earlier weaknesses. Explain complexity and test cases.
 
 ### Completion evidence
 
-- [ ] RepoCop has an eval that runs the stale-branch task under both skill versions, and grades each run from the repository rather than the agent's message.
-- [ ] The eval's grader rejects a deliberately wrong result.
 - [ ] Can explain the eval in two minutes without notes.
 - [ ] Have a timed coding result and a short list of recurring mistakes.
 
@@ -240,7 +237,7 @@ Use the sections that address a current exercise or knowledge gap. Reading the e
 ## Next session
 
 - **Current phase:** Phase 3
-- **First action:** Build RepoCop's first eval.
-- **Timebox:** 120 minutes.
-- **Resume references:** This plan, including its Evaluation project, the latest progress-log entries, and the guide listed for p3a1 in `reference/_index.md`.
+- **First action:** Explain the eval.
+- **Timebox:** 30 minutes.
+- **Resume references:** This plan, including its Evaluation project, the latest progress-log entries, and the guides listed for p3a1 in `reference/_index.md`.
 - **Known blockers:** Interview date and exact assessment format are unconfirmed.

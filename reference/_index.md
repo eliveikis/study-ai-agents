@@ -57,16 +57,12 @@ The study guide for each activity in [study_plan.md](../study_plan.md), by the a
 
 ## Phase 3
 
-**p3a1: RepoCop's first eval**
+**p3a1: Explain the eval**
 
 - [agent-evaluation.md](agent-evaluation.md)
 - [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 
-**p3a2: Explain the eval**
-
-- [agent-evaluation.md](agent-evaluation.md)
-
-**p3a3: Timed coding**
+**p3a2: Timed coding**
 
 - [timed-coding.md](timed-coding.md)
 
